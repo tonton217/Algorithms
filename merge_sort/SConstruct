@@ -1,0 +1,7 @@
+env = Environment()
+sources = env.Glob("src/*.cc")
+env.Append(CPPPATH = ["include"])
+env.Append(CCFLAGS = '-std=c++1y')
+app = env.Program(target = "bin/merge_sort", source = sources)
+
+env.Default(app)
